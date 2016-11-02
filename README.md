@@ -23,4 +23,4 @@ npm run lint
 ```
 
 ## demo
-`https://www.oliveck10.github.io/calculator`
+[link](https://www.oliveck10.github.io/calculator)
