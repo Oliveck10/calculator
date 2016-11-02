@@ -21,3 +21,7 @@ Then go to `http://localhost:3000`
 ```
 npm run lint
 ```
+
+## demo
+
+[link](https://oliveck10.github.io/calculator)
