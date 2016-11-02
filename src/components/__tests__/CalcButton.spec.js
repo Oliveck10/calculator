@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import CalcButton from '../CalcButton';
+import CalcButton from '../calcbutton';
 
 it('can assign extra class to button', () => {
   const element = mount(
@@ -12,7 +12,7 @@ it('can assign extra class to button', () => {
     </CalcButton>
   );
 
-  expect(element.find('button').prop('className')).toMatch(/extra/);
+  expect(element.find('div').prop('className')).toMatch(/extra/);
 });
 
 it('call props.onClick when button be clicked', () => {
@@ -25,7 +25,7 @@ it('call props.onClick when button be clicked', () => {
     </CalcButton>
   );
 
-  const button = element.find('button');
+  const button = element.find('div');
   button.simulate('click');
 
   expect(onClick).toBeCalled();

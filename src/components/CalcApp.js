@@ -121,7 +121,7 @@ class CalcApp extends React.Component {
             <CalcButton onClick={this.genAppend(7)} className="calc-number">7</CalcButton>
             <CalcButton onClick={this.genAppend(8)} className="calc-number">8</CalcButton>
             <CalcButton onClick={this.genAppend(9)} className="calc-number">9</CalcButton>
-            <CalcButton onClick={this.genMode(3)} className="calc-operator">×</CalcButton>
+            <CalcButton onClick={this.genMode(3)} className="calc-operator">x</CalcButton>
           </div>
           <div className="calc-row">
             <CalcButton onClick={this.genAppend(4)} className="calc-number">4</CalcButton>

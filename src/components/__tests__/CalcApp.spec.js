@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
 
-import CalcApp from '../CalcApp';
-import CalcButton from '../CalcButton';
+import CalcApp from '../calcapp';
+import CalcButton from '../calcbutton';
 
 it('render button correctly', () => {
   const app = mount(<CalcApp />);
@@ -90,7 +90,7 @@ it('7 8 9 - 8 = -> 781', () => {
 it('AC should clear state', () => {
   const app = mount(<CalcApp />);
 
-  const initialState = app.state();
+  const initialState = Object.assign({}, app.state());
 
   const rows = app.find('.calc-row');
   const row0 = rows.at(0);
@@ -104,5 +104,3 @@ it('AC should clear state', () => {
 
   expect(app.state()).toEqual(initialState);
 });
-
-
