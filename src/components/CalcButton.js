@@ -38,11 +38,11 @@ class CalcButton extends React.Component {
 CalcButton.propTypes = {
   className: React.PropTypes.string,
   children: React.PropTypes.string.isRequired,
-  onClick: React.PropTypes.func
+  onClick: React.PropTypes.func,
 };
 
 CalcButton.defaultProps = {
-  onClick: () => {}
+  onClick: () => {},
 };
 
 export default CalcButton;

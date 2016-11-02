@@ -1,10 +1,11 @@
 import React from 'react';
-import CalcButton from './calcbutton'
+import CalcButton from './calcbutton';
+
 class CalcApp extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      num: "0",
+      num: '0',
       tempnum: 0,
       mode: 0,
       valid: true,
@@ -27,7 +28,7 @@ class CalcApp extends React.Component {
   }
 
   resetState() {
-    this.state.num = "0";
+    this.state.num = '0';
     this.state.mode = 0;
     this.state.tempnum = 0;
     this.state.valid = true;
@@ -40,9 +41,9 @@ class CalcApp extends React.Component {
 
   genAppend(num) {
     function append() {
-      if(this.state.num === "0" || this.state.num === "-0") this.state.num = this.state.num.slice(0,-1);
-      if(!this.state.valid) {
-        this.state.num = "";
+      if (this.state.num === '0' || this.state.num === '-0') this.state.num = this.state.num.slice(0, -1);
+      if (!this.state.valid) {
+        this.state.num = '';
         this.state.valid = true;
       }
       this.state.num += num;
@@ -55,12 +56,13 @@ class CalcApp extends React.Component {
   genMode(key) {
     function mode() {
       this.calculate();
-      if(!key) {
-        let str = this.state.num;
+      if (!key) {
+        const str = this.state.num;
         this.resetState();
         this.state.num = str;
       }
       else this.state.mode = key;
+
       this.update();
     }
     mode = mode.bind(this);
@@ -68,23 +70,23 @@ class CalcApp extends React.Component {
   }
 
   calculate() {
-    if(!this.state.valid) return;
-    if(this.state.mode === 0) {
+    if (!this.state.valid) return;
+    if (this.state.mode === 0) {
       this.state.tempnum = +this.state.num;
     }
-    else if(this.state.mode === 1) {
+    else if (this.state.mode === 1) {
       this.state.tempnum += +this.state.num;
     }
-    else if(this.state.mode === 2) {
+    else if (this.state.mode === 2) {
       this.state.tempnum -= +this.state.num;
     }
-    else if(this.state.mode === 3) {
+    else if (this.state.mode === 3) {
       this.state.tempnum *= +this.state.num;
     }
-    else if(this.state.mode === 4) {
+    else if (this.state.mode === 4) {
       this.state.tempnum /= +this.state.num;
     }
-    else if(this.state.mode === 5) return;
+    else if (this.state.mode === 5) return;
 
     this.state.num = this.state.tempnum.toString();
 
@@ -92,14 +94,14 @@ class CalcApp extends React.Component {
   }
 
   invert() {
-    if(!this.state.valid) this.state.num = "0";
-    if(this.state.num[0] !== '-') this.state.num = "-" + this.state.num;
+    if (!this.state.valid) this.state.num = '0';
+    if (this.state.num[0] !== '-') this.state.num = '-' + this.state.num;
     else this.state.num = this.state.num.substr(1);
     this.update();
   }
 
   percent() {
-    if(!this.state.valid) this.state.num = "0";
+    if (!this.state.valid) this.state.num = '0';
     this.state.num = +this.state.num / 100;
     this.update();
   }
@@ -137,7 +139,7 @@ class CalcApp extends React.Component {
           </div>
           <div className="calc-row">
             <CalcButton onClick={this.genAppend(0)} className="calc-number-0">0</CalcButton>
-            <CalcButton onClick={this.genAppend(".")} className="calc-number">.</CalcButton>
+            <CalcButton onClick={this.genAppend('.')} className="calc-number">.</CalcButton>
             <CalcButton onClick={this.genMode(0)} className="calc-operator">=</CalcButton>
           </div>
         </div>
