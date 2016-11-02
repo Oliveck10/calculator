@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import CalcApp from './components/calcapp';
 import './style.css';
-import CalcApp from './components/CalcApp';
 
-// eslint
 ReactDOM.render(<CalcApp />, document.getElementById('root'));
