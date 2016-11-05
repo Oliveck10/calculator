@@ -1,5 +1,6 @@
-# calculator-starter
-In-class practice. Using webpack, babel, react
+# calculator-prototype
+Using webpack, babel as env config
+Using react as front-end framework
 
 ## install
 ```
