@@ -1,6 +1,6 @@
 # calculator-prototype
-Using webpack, babel as env config
-Using react as front-end framework
+- Using webpack, babel as env config
+- Using react as front-end framework
 
 ## install
 ```
@@ -21,6 +21,11 @@ Then go to `http://localhost:3000`
 ## lint
 ```
 npm run lint
+```
+
+## test
+```
+npm run test
 ```
 
 ## demo
