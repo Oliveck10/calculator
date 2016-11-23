@@ -29,4 +29,4 @@ npm run test
 ```
 
 ## demo
-[link](www.oliveck10.github.io/calculator)
+[link](https://oliveck10.github.io/calculator/)
