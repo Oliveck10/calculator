@@ -21468,7 +21468,7 @@
 	    var _this = _possibleConstructorReturn(this, (CalcApp.__proto__ || Object.getPrototypeOf(CalcApp)).call(this, props));
 
 	    _this.state = {
-	      num: "0",
+	      num: '0',
 	      tempnum: 0,
 	      mode: 0,
 	      valid: true
@@ -21495,7 +21495,7 @@
 	  }, {
 	    key: 'resetState',
 	    value: function resetState() {
-	      this.state.num = "0";
+	      this.state.num = '0';
 	      this.state.mode = 0;
 	      this.state.tempnum = 0;
 	      this.state.valid = true;
@@ -21510,9 +21510,9 @@
 	    key: 'genAppend',
 	    value: function genAppend(num) {
 	      function append() {
-	        if (this.state.num === "0" || this.state.num === "-0") this.state.num = this.state.num.slice(0, -1);
+	        if (this.state.num === '0' || this.state.num === '-0') this.state.num = this.state.num.slice(0, -1);
 	        if (!this.state.valid) {
-	          this.state.num = "";
+	          this.state.num = '';
 	          this.state.valid = true;
 	        }
 	        this.state.num += num;
@@ -21531,6 +21531,7 @@
 	          this.resetState();
 	          this.state.num = str;
 	        } else this.state.mode = key;
+
 	        this.update();
 	      }
 	      mode = mode.bind(this);
@@ -21559,14 +21560,14 @@
 	  }, {
 	    key: 'invert',
 	    value: function invert() {
-	      if (!this.state.valid) this.state.num = "0";
-	      if (this.state.num[0] !== '-') this.state.num = "-" + this.state.num;else this.state.num = this.state.num.substr(1);
+	      if (!this.state.valid) this.state.num = '0';
+	      if (this.state.num[0] !== '-') this.state.num = '-' + this.state.num;else this.state.num = this.state.num.substr(1);
 	      this.update();
 	    }
 	  }, {
 	    key: 'percent',
 	    value: function percent() {
-	      if (!this.state.valid) this.state.num = "0";
+	      if (!this.state.valid) this.state.num = '0';
 	      this.state.num = +this.state.num / 100;
 	      this.update();
 	    }
@@ -21694,7 +21695,7 @@
 	            ),
 	            _react2.default.createElement(
 	              _calcbutton2.default,
-	              { onClick: this.genAppend("."), className: 'calc-number' },
+	              { onClick: this.genAppend('.'), className: 'calc-number' },
 	              '.'
 	            ),
 	            _react2.default.createElement(
