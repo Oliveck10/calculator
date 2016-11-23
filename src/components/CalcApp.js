@@ -35,10 +35,6 @@ class CalcApp extends React.Component {
     this.update();
   }
 
-  showNotImplemented() {
-    console.warn('This function is not implemented yet.');
-  }
-
   genAppend(num) {
     function append() {
       if (this.state.num === '0' || this.state.num === '-0') this.state.num = this.state.num.slice(0, -1);
@@ -86,7 +82,7 @@ class CalcApp extends React.Component {
     else if (this.state.mode === 4) {
       this.state.tempnum /= +this.state.num;
     }
-    else if (this.state.mode === 5) return;
+    // else if (this.state.mode === 5) return;
 
     this.state.num = this.state.tempnum.toString();
 
@@ -100,11 +96,13 @@ class CalcApp extends React.Component {
     this.update();
   }
 
+
   percent() {
     if (!this.state.valid) this.state.num = '0';
     this.state.num = +this.state.num / 100;
     this.update();
   }
+
 
   render() {
     return (

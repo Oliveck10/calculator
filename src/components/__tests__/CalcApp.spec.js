@@ -104,3 +104,60 @@ it('AC should clear state', () => {
 
   expect(app.state()).toEqual(initialState);
 });
+
+it('1 0% * 10 / 1 + 1 = -> 2', () => {
+  const app = mount(<CalcApp />);
+
+  const rows = app.find('.calc-row');
+
+  const row0 = rows.at(0);
+  const row1 = rows.at(1);
+  // const row2 = rows.at(2);
+  const row3 = rows.at(3);
+  const row4 = rows.at(4);
+
+  const btn1 = row3.find(CalcButton).at(0);
+  btn1.simulate('click');
+  const btn0 = row4.find(CalcButton).at(0);
+  btn0.simulate('click');
+  const btnPer = row0.find(CalcButton).at(2);
+  btnPer.simulate('click');
+
+  const btnMultiply = row1.find(CalcButton).at(3);
+  btnMultiply.simulate('click');
+
+  btn1.simulate('click');
+  btn0.simulate('click');
+  const btnEqual = row4.find(CalcButton).at(2);
+
+  const btnDivide = row0.find(CalcButton).at(3);
+  btnDivide.simulate('click');
+  btn1.simulate('click');
+
+  const btnAdd = row3.find(CalcButton).at(3);
+  btnAdd.simulate('click');
+  btn1.simulate('click');
+
+  btnEqual.simulate('click');
+
+  expect(app.find('.calc-display').text()).toEqual('2');
+});
+
+it('7 +/- -> -7 +/- -> 7', () => {
+  const app = mount(<CalcApp />);
+
+  const rows = app.find('.calc-row');
+
+  const row0 = rows.at(0);
+  const row1 = rows.at(1);
+
+  const btn7 = row1.find(CalcButton).at(0);
+  const btnInv = row0.find(CalcButton).at(1);
+
+  btn7.simulate('click');
+  btnInv.simulate('click');
+  btnInv.simulate('click');
+
+
+  expect(app.find('.calc-display').text()).toEqual('7');
+});
